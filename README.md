@@ -1,4 +1,4 @@
-# ✋🤟 Sign Language to Voice Conversion System
+# ✋🤟 Sign Language to Text Conversion System
 
 A **two-level real-time sign language recognition system** that supports both **static gestures (alphabets)** and **dynamic gestures (words/phrases)**.  
 
