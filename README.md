@@ -1,26 +1,52 @@
 # ✋🤟 Sign Language to Voice Conversion System
 
-A **real-time computer vision and ML application** that converts sign language gestures into speech, improving accessibility for the speech-impaired.  
-Built with **OpenCV, MediaPipe, scikit-learn, and TensorFlow**.
+A **two-level real-time sign language recognition system** that supports both **static gestures (alphabets)** and **dynamic gestures (words/phrases)**.  
+
+Built using **OpenCV, MediaPipe, scikit-learn, and TensorFlow**.
+
+---
+
+## System Architecture
+The project is divided into **two levels**:
+
+### 1️) Static Gesture Recognition
+- **Model**: Random Forest Classifier (scikit-learn)  
+- **Input**: Extracted hand landmarks (relative positions, pinch distance, finger spread)  
+- **Output**: Alphabets (A–Z) and control gestures (SPACE, DELETE, MODE)  
+- **Accuracy**: **99.81%**
+
+### 2️) Dynamic Gesture Recognition
+- **Model**: LSTM (Long Short-Term Memory) Neural Network (TensorFlow)  
+- **Input**: Sequences of hand landmark frames (temporal data)  
+- **Output**: Words and short phrases  
+- **Accuracy**: **100%**
+
+---
 
 ## Features
-- **92% accuracy** in recognizing alphabets + control gestures (SPACE, DELETE, MODE).  
-- Extracts advanced hand features: relative landmarks, pinch distance, finger spread.  
-- **Random Forest classifier** for gesture classification.  
-- Integrated **Text-to-Speech (TTS)** engine for real-time voice output.  
+- Dual architecture: **Random Forest (static)** + **LSTM (dynamic)**.  
+- Real-time hand tracking with **MediaPipe** + **OpenCV**.  
+- Robust accuracy (**99.81% static, 100% dynamic**).   
+- Designed for **accessibility & inclusivity**.  
+
+---
 
 ## Tech Stack
 - **Computer Vision**: OpenCV, MediaPipe  
-- **ML Models**: scikit-learn (Random Forest), TensorFlow  
-- **Speech Output**: pyttsx3 / gTTS  
+- **Machine Learning**: scikit-learn (Random Forest)  
+- **Deep Learning**: TensorFlow (LSTM)
+
+---
 
 ## Demo
-[I will upload the screenshots here]
+[I will add screenshots here shortly]
+
+---
 
 ## Usage
 1. Clone repo:  
    ```bash
-   git clone https://github.com/yourusername/sign-language-voice.git
+   git clone https://github.com/piriyajeishree410/Sign-language-detector.git
 ````
 
 2. Install dependencies:
@@ -28,7 +54,7 @@ Built with **OpenCV, MediaPipe, scikit-learn, and TensorFlow**.
    ```bash
    pip install -r requirements.txt
    ```
-3. Run system:
+3. Run the system:
 
    ```bash
    python main.py
@@ -36,5 +62,14 @@ Built with **OpenCV, MediaPipe, scikit-learn, and TensorFlow**.
 
 ---
 
-````
+## Future Improvements
 
+* Expand dynamic dataset to support full sentences.
+* Add multilingual text-to-speech output.
+* Deploy as a **web or mobile app** for broader accessibility.
+
+---
+
+```
+
+---
